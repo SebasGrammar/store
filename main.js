@@ -71,7 +71,7 @@ app.get("/products", (req, res, next) => { // "/" npt working either...
 }, (req, res) => {
     res.render("index")
 })
-// not working with name yet...
+// not working with name yet... // gonna have to fix this so that it works with names instead of ids.
 app.get("/products/:id", (req, res, next) => {
     let productId = req.params.id;
     Product.findById(productId)

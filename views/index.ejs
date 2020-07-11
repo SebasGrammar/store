@@ -3,8 +3,8 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Email</th>
-            <th>Zip Code</th>
+            <th>Picture</th>
+            <th>Price</th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +15,8 @@
                     <%= product.name %>
                 </a>
             </td>
-            <td><%= product.email %></td>
-            <td><%= product.zipCode %></td>
+            <td><%= product.picture %></td>
+            <td><%= product.price %></td>
             <td>
                 <a href="<%=`/products/${product._id}/edit` %>">
                     Edit

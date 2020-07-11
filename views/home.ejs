@@ -1,0 +1,39 @@
+<div class="container">
+
+    <% products.forEach(product => { %>
+    <div class="product-grid">
+        <div class="product-image">
+            <div class="decor">
+                <!-- obviously, for this to be dynamic, the products should be created through a mongoose model so they can have an id you can use to single it out! otherwise, how would you do it? -.- -->
+            </div>
+            <a href="<%= `/products/${product._id}` %>">
+                <img src="<%= product.picture %>" style="width: 200px;" alt="">
+            </a>
+            <span class="new-product-label">Nuevo</span>
+            <a href="" class="product-like-icon">
+                <i class="fa fa-heart"></i>
+            </a>
+            <div class="product-button-group">
+                <a href="" class="add-to-cart">Add to cart</a>
+                <a href="" class="quick-view">Quick view</a>
+            </div>
+        </div>
+
+        <div class="product-content">
+            <span class="brand-name">SKALA</span>
+            <h3 class="title large-text">
+                <%= product.name %>
+            </h3>
+            <span class="price large-text bold"><%= product.price %></span>
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+            </ul>
+        </div>
+    </div>
+
+    <% }); %>
+</div>

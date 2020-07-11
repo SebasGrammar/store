@@ -6,7 +6,7 @@
             <div class="decor">
                 <!-- obviously, for this to be dynamic, the products should be created through a mongoose model so they can have an id you can use to single it out! otherwise, how would you do it? -.- -->
             </div>
-            <a href="<%= `/products/${product._id}` %>">
+            <a href="<%= `/products/${product.nameId}` %>">
                 <img src="<%= product.picture %>" style="width: 200px;" alt="">
             </a>
             <span class="new-product-label">Nuevo</span>

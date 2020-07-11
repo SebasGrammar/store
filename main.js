@@ -71,10 +71,28 @@ app.get("/products", (req, res, next) => { // "/" npt working either...
 }, (req, res) => {
     res.render("index")
 })
-// not working with name yet... // gonna have to fix this so that it works with names instead of ids.
-app.get("/products/:id", (req, res, next) => {
+//not working with name yet... // gonna have to fix this so that it works with names instead of ids.
+
+// app.get("/products/:id", (req, res, next) => {
+//     console.log(req.params)
+//     let productId = req.params.id;
+//     Product.findById(productId)
+//         .then(product => {
+//             res.locals.product = product;
+//             next();
+//         })
+//         .catch(error => {
+//             console.log(`Error fetching product by ID: ${error.message}`);
+//             next(error);
+//         });
+// }, (req, res) => {
+//     res.render("test")
+// })
+
+app.get("/products/:product", (req, res, next) => {
+    console.log(req.params.product)
     let productId = req.params.id;
-    Product.findById(productId)
+    Product.findOne({nameId: req.params.product})
         .then(product => {
             res.locals.product = product;
             next();

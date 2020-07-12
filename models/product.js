@@ -1,6 +1,12 @@
 const mongoose = require("mongoose"),
     {Schema} = mongoose,
     productSchema = new Schema({
+
+        brand: {
+            type: String,
+            required: true
+        },
+
         name: {
             type: String,
             required: true
@@ -13,7 +19,6 @@ const mongoose = require("mongoose"),
 
         description: {
             type: String,
-            required: true
         },
 
         picture: {

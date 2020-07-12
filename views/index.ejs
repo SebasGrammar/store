@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Picture</th>
+            <th>Description</th>
             <th>Price</th>
         </tr>
     </thead>
@@ -15,7 +15,7 @@
                     <%= product.name %>
                 </a>
             </td>
-            <td><%= product.picture %></td>
+            <td><%= product.description %></td>
             <td>$<%= product.price %></td>
             <td>
                 <a href="<%=`/products/${product._id}/edit` %>">

@@ -1,3 +1,24 @@
+<!-- <div class="side-menu">
+        <div class="categories">
+            <h3>Categorías</h3>
+            <ul class="category-names" style="display: flex; flex-direction: column;">
+                <li style="margin-top: 30px;"><img src="../img/right-chevron.svg" class="chevron" alt=""><a
+                        href="#">Skala</a></li>
+                <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Novex</a></li>
+                <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+                <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+                <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Filtrar por precio</h3>
+            <input type="range">
+
+        </div>
+
+    </div> -->
+
 <div class="container">
 
     <% products.forEach(product => { %>
@@ -23,7 +44,7 @@
             <h3 class="title large-text">
                 <%= product.name %>
             </h3>
-            <span class="price large-text bold"><%= product.price %></span>
+            <span class="price large-text bold">$<%= product.price %></span>
             <ul class="rating">
                 <li class="fa fa-star"></li>
                 <li class="fa fa-star"></li>

@@ -1,4 +1,4 @@
-<h2>Products Table</h2>
+<!-- <h2>Products Table</h2>
 <table class="table">
   <thead>
     <tr>
@@ -30,4 +30,65 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+
+<div class="body">
+  <div class="side-menu">
+    <div class="categories">
+      <h3>Categorías</h3>
+      <ul class="category-names" style="display: flex; flex-direction: column;">
+        <li style="margin-top: 30px;"><img src="../img/right-chevron.svg" class="chevron" alt=""><a href="#">Skala</a>
+        </li>
+        <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Novex</a></li>
+        <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+        <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+        <li><img src="../img/right-chevron.svg" class="chevron" alt=""><a>Lorem Ipsum</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Filtrar por precio</h3>
+      <input type="range">
+
+    </div>
+
+  </div>
+
+
+  <div class="c">
+
+    <div class="upper">
+      <div class="pic">
+        <img src="<%= product.picture %>" alt="" style="width: 310px">
+      </div>
+      <div class="info">
+        <h1><%= product.name %></h1>
+        <h1>$<%= product.price %></h1>
+      </div>
+    </div>
+
+    <div>
+      <%= product.description %>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- <div class="c">
+
+  <div class="upper">
+    <div class="pic">
+      <img src="<%= product.picture %>" alt="" style="width: 310px">
+    </div>
+    <div class="info">
+      <h1><%= product.name %></h1>
+      <h1>$<%= product.price %></h1>
+    </div>
+  </div>
+
+  <div>
+    <%= product.description %>
+  </div>
+</div> -->

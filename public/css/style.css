@@ -4,6 +4,10 @@ body {
     background: ;
 }
 
+:root {
+    --content-padding: 30px 48px;
+}
+
 /* CONTAINER */
 
 /* https://dev.solteq.com/2016/12/02/building-a-responsive-product-grid-with-css-flexbox/ */
@@ -181,4 +185,22 @@ a {
     position: absolute;
     left: 0;
     font-family: 'PT Serif', serif;
+}
+
+/* BODY */
+
+.body {
+    /* background: green; */
+    display: grid !important;
+    grid-template-columns: 1fr 4fr;
+}
+
+/*C**/
+
+.c {
+    padding: var(--content-padding);
+}
+
+.upper {
+    display: flex;
 }

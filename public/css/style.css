@@ -2,11 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif&family=Playfair+Display&display=swap');
 body {
     background: ;
+    font-family: 'PT Serif', serif;
 }
 
 :root {
     --content-padding: 30px 48px;
 }
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
 /* CONTAINER */
 

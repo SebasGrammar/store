@@ -78,8 +78,9 @@
 
 
 <div class="may-like">
-
-  2
+  <% things.forEach(thing => { %>
+    <div><%= thing.name %></div>
+  <% }); %>
 </div>
 
 <!-- <div class="c">

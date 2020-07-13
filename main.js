@@ -90,57 +90,120 @@ app.get("/products", (req, res, next) => { // "/" npt working either...
 // })
 
 
+/* THIS IS A FUCKING TEST SO WATCH OUT */
+
+// app.get("/products/:product", (req, res) => {
+//     console.log("AYYYY")
+//     Product.find()
+//         .then(products => {
+//             res.locals.products = products
+//         })
+//         .catch(error => {
+//             console.log("Error")
+//         })
+// })
+
+/* */
+
 /**  THIS IS THE ONE **/
-app.get("/products/:product", (req, res, next) => {
-    console.log(req.params.product)
-    let productId = req.params.id;
-    Product.findOne({nameId: req.params.product})
-        .then(product => {
-            res.locals.product = product;
-            next();
-        })
-        .catch(error => {
-            console.log(`Error fetching product by ID: ${error.message}`);
-            next(error);
-        });
-}, (req, res) => {
-    res.render("test")
-})
-
-/****/
-
 // app.get("/products/:product", (req, res, next) => {
-//     //console.log(req.params.product)
+//     console.log(req.params.product)
 //     let productId = req.params.id;
 //     Product.findOne({ nameId: req.params.product })
 //         .then(product => {
 //             res.locals.product = product;
-//             // next();
+//             next();
 //         })
-//         .then(Product.findOne({nameId: req.params.product})
-//             .then(product => {
-//                 res.locals.product = product
-//                 next()
+//         .catch(error => {
+//             console.log(`Error fetching product by ID: ${error.message}`);
+//             next(error);
+//         });
+// }, (req, res) => {
+//     res.render("test")
+// })
+/****/
+
+
+// app.get("/products/:product", (req, res) => {
+//     console.log("AYYYY")
+//     Product.find()
+//         .then(products => {
+//             res.locals.products = products
+//         })
+//         .catch(error => {
+//             console.log("Error")
+//         })
+// })
+
+/*************/
+// app.get("/products/:product", (req, res, next) => {
+//     console.log(req.params.product)
+//     let productId = req.params.id;
+//     Product.findOne({ nameId: req.params.product })
+//         .then(product => {
+//             res.locals.product = product;
+//             next();
+//         })
+//         .catch(error => {
+//             console.log(`Error fetching product by ID: ${error.message}`);
+//             next(error);
+//         })
+//         .then(Product.find()
+//             .then(things => {
+//                 console.log("AYE")
+//                 res.locals.things = things
+//                 console.log(things)
 //             })
-//             .catch(error => {
-//                 console.log(`Error fetching product by ID: ${error.message}`);
-//                 next(error);
-//             })
-//         );
+//             .catch(console.log("FUCK"))
+
+//         ).catch(console.log("BUUUUUUU"))
 // }, (req, res) => {
 //     res.render("test")
 // })
 
-app.get("/products/:product", (req, res) => {
-    console.log("AYYYY")
-    Product.find()
-        .then(products => {
-            res.locals.products = products
-        })
-        .catch(error => {
-            console.log("Error")
-        })
-})
+/**************/
+
+// app.get("/products/:product", (req, res, next) => {
+//     console.log(req.params.product)
+//     let productId = req.params.id;
+//     Product.find()
+//         .then(things => {
+//             res.locals.things = things
+//             console.log(things)
+//             // next();
+//         }).then(
+//     Product.findOne({ nameId: req.params.product })
+//         .then(product => {
+//             res.locals.product = product;
+//             next();
+//         }))
+//         .catch(error => {
+//             console.log(`Error fetching product by ID: ${error.message}`);
+//             next(error);
+//         })
+
+
+
+// }, (req, res) => {
+//     res.render("test")
+// })
+
+app.get("/products/:product", async function(req, res, next) {
+    let productId = req.params.id
+
+    try {
+    let things = await Product.find()
+    //console.log(things)
+    res.locals.things = things
+
+    let product = await Product.findOne({nameId: req.params.product})
+    console.log(product)
+    res.locals.product = product
+    next()
+    } catch {
+        console.log("Error")
+    }
+}, (req, res) => res.render("test"))
 
 app.listen(3000, function () {
     console.log(`port listening in port 3000`)

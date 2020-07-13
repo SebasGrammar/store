@@ -89,6 +89,8 @@ app.get("/products", (req, res, next) => { // "/" npt working either...
 //     res.render("test")
 // })
 
+
+/**  THIS IS THE ONE **/
 app.get("/products/:product", (req, res, next) => {
     console.log(req.params.product)
     let productId = req.params.id;
@@ -105,6 +107,40 @@ app.get("/products/:product", (req, res, next) => {
     res.render("test")
 })
 
+/****/
+
+// app.get("/products/:product", (req, res, next) => {
+//     //console.log(req.params.product)
+//     let productId = req.params.id;
+//     Product.findOne({ nameId: req.params.product })
+//         .then(product => {
+//             res.locals.product = product;
+//             // next();
+//         })
+//         .then(Product.findOne({nameId: req.params.product})
+//             .then(product => {
+//                 res.locals.product = product
+//                 next()
+//             })
+//             .catch(error => {
+//                 console.log(`Error fetching product by ID: ${error.message}`);
+//                 next(error);
+//             })
+//         );
+// }, (req, res) => {
+//     res.render("test")
+// })
+
+app.get("/products/:product", (req, res) => {
+    console.log("AYYYY")
+    Product.find()
+        .then(products => {
+            res.locals.products = products
+        })
+        .catch(error => {
+            console.log("Error")
+        })
+})
 
 app.listen(3000, function () {
     console.log(`port listening in port 3000`)

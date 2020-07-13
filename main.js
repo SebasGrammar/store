@@ -198,7 +198,9 @@ app.get("/products/:product", async function(req, res, next) {
 
     let product = await Product.findOne({nameId: req.params.product})
     console.log(product)
-    res.locals.product = product
+    res.locals.product = product // this is the name you're going to use to refer to whatever this returns, from EJS.
+    // if it were pato instead of product, then in test.ejs, I would have to change product for pato.
+    // as opposed to find(), this returns an object (not an array of objects).
     next()
     } catch {
         console.log("Error")

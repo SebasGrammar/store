@@ -78,9 +78,15 @@
 
 
 <div class="may-like">
-  <% things.forEach(thing => { %>
-    <div><%= thing.name %></div>
-  <% }); %>
+  <h2>Quizá te interese</h2>
+  <div class="similar-products">
+    <% things.forEach(thing => { %>
+    <div>
+      <a href="<%= `/products/${thing.nameId}` %>"><img style="width: 180px" src="<%= thing.picture %>" alt=""></a>
+      <h3><%= thing.name %></h3>
+    </div>
+    <% }); %>
+  </div>
 </div>
 
 <!-- <div class="c">

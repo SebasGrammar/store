@@ -384,3 +384,14 @@ footer {
         margin-left: 0;
     }
 }
+
+/***/
+
+.may-like {
+    padding: 50px;
+}
+
+.similar-products {
+    display: flex;
+    justify-content: space-between;
+}

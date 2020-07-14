@@ -188,20 +188,57 @@ app.get("/products", (req, res, next) => { // "/" npt working either...
 //     res.render("test")
 // })
 
-app.get("/products/:product", async function(req, res, next) {
+// app.get("/products/:product", async function(req, res, next) {
+//     let productId = req.params.id
+
+//     try {
+//     let things = await Product.find()
+//     //console.log(things)
+//     res.locals.things = things
+
+//     let product = await Product.findOne({nameId: req.params.product})
+//     console.log(product)
+//     res.locals.product = product // this is the name you're going to use to refer to whatever this returns, from EJS.
+//     // if it were pato instead of product, then in test.ejs, I would have to change product for pato.
+//     // as opposed to find(), this returns an object (not an array of objects).
+//     next()
+//     } catch {
+//         console.log("Error")
+//     }
+// }, (req, res) => res.render("test"))
+
+function getItem() {
+
+}
+
+app.get("/products/:product", async function (req, res, next) {
     let productId = req.params.id
 
     try {
-    let things = await Product.find()
-    //console.log(things)
-    res.locals.things = things
+        //let things = 
 
-    let product = await Product.findOne({nameId: req.params.product})
-    console.log(product)
-    res.locals.product = product // this is the name you're going to use to refer to whatever this returns, from EJS.
-    // if it were pato instead of product, then in test.ejs, I would have to change product for pato.
-    // as opposed to find(), this returns an object (not an array of objects).
-    next()
+        let results = []
+        let all = await Product.find()
+
+        for (let index = 0; index < 3; index++) {
+            //results.push(all[index])
+            results.push(all[Math.floor(Math.random() * Math.floor(all.length))])
+        }
+
+        console.log(results)
+
+        //await Product.find()
+        //console.log(things)
+        res.locals.things = results
+
+        // let results = []
+
+        let product = await Product.findOne({ nameId: req.params.product })
+        console.log(product)
+        res.locals.product = product // this is the name you're going to use to refer to whatever this returns, from EJS.
+        // if it were pato instead of product, then in test.ejs, I would have to change product for pato.
+        // as opposed to find(), this returns an object (not an array of objects).
+        next()
     } catch {
         console.log("Error")
     }
